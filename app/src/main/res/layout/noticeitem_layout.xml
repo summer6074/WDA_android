@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_item_color_bg"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/notice_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关于公元社区收取2014年物业费以及补交上年度物业费的相关通知"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#444444" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/notice_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="2014-09-05 15:10"
+        android:layout_below="@id/notice_title"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textSize="14sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/notice_poster"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/notice_title"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="公元社区"
+        android:textColor="#898989"
+        android:textSize="14sp" >
+    </TextView>
+</RelativeLayout>

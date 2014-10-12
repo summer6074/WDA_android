@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/noticedetail_title"></include>
+    <TextView
+        android:id="@+id/notice_detail_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="2014年物业费缴费通知"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:id="@+id/notice_detail_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:text="发布日期：2014-09-14"
+        android:layout_marginTop="5dp"
+        android:textColor="#898989"
+        android:textSize="14dp"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:id="@+id/notice_detail_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:lineSpacingExtra="3dp"
+        android:textSize="16sp"
+        android:text="尊敬的业主，马上就要一年一度的物业费缴纳时间，请各位业主按时到物业公司进行费用缴纳,如不按时缴纳的客户，我们将登记备案。"/>
+</LinearLayout>

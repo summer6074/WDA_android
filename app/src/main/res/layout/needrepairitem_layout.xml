@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+    <TextView
+        android:id="@+id/repair_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textSize="16dp"
+        android:text="5单元2楼水管坏了，麻烦派人来修理一下"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:textColor="#000000" >
+    </TextView>
+    <TextView
+        android:id="@+id/repair_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/repair_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:textSize="14dp"
+        android:text="上门时间：2014-09-26 17:00 - 18:00"/>
+    <TextView
+        android:id="@+id/repair_contacter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/repair_time"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:textSize="14dp"
+        android:text="联系人： 老黄瓜"/>
+    <TextView
+        android:id="@+id/repair_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/repair_contacter"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:textSize="14dp"
+        android:text="联系电话： 021-110"/>
+    <TextView
+        android:id="@+id/repair_poste_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/repair_phone"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        android:textSize="14dp"
+        android:text="2014-09-14 12:15"/>
+    <TextView
+        android:id="@+id/repair_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/repair_phone"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        android:textSize="14dp"
+        android:text="已受理"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"/>
+</RelativeLayout>

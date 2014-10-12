@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAEAEA">
+    <LinearLayout
+        android:id="@+id/setting_layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:clickable="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/setting_photo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_sex_male"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/setting_nickName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textSize="14dp"
+                android:text="大胖子"/>
+            <TextView
+                android:id="@+id/setting_phone"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textSize="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="手机号：13764369445"/>
+            
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/wallet_select_indicator"/>
+        </LinearLayout>
+    
+    </LinearLayout>
+
+</LinearLayout>

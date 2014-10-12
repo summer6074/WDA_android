@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/repairServiceTitle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/tab_bg" >
+    <ImageButton
+        android:id="@+id/repairServiceBackImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/button_back_down"
+        android:background="@null"/>
+    <TextView
+        android:id="@+id/repairServiceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:text="报修服务"/>
+
+    <ImageButton
+        android:id="@+id/repairServiceNewBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="6dp"
+        android:src="@drawable/actionbar_add_icon"
+        android:background="@null"/>
+
+</RelativeLayout>

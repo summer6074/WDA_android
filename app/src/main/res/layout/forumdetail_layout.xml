@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/forumdetail_title"></include>
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+    <ImageView
+        android:id="@+id/lt_img"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/icon_yqlj">
+    </ImageView>
+    <LinearLayout
+        android:id="@+id/lv_llay1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/lt_img"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:id="@+id/lt_poster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小胖子"
+            android:textStyle="bold"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColor="#898989"
+            android:textSize="14sp" >
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lv_llay2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/lt_img"
+        android:layout_below="@+id/lv_llay1"
+        android:layout_marginTop="15dp">
+        <TextView
+            android:id="@+id/lt_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发表 2014-09-04 08:20"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColor="#898989"
+            android:textSize="14sp" >
+        </TextView>
+        <TextView
+            android:id="@+id/lt_replyNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/lt_date"
+            android:text="回复: 1"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColor="#898989"
+            android:textSize="14sp" >
+        </TextView>
+        <TextView
+            android:id="@+id/lt_browserNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/lt_replyNum"
+            android:text="浏览: 12"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColor="#898989"
+            android:textSize="14sp" >
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lv_llay3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/lt_img">
+        <TextView
+            android:id="@+id/lt_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="论坛首页测试啦！！！！！！！！"
+            android:layout_marginTop="15dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:maxLines="2"/>
+    </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/lt_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="明天下午5点爱社区论坛正式开发，欢迎大家踊跃发言，积极参与活动，活跃论坛气氛，活动包括猜谜，投票等，在活动最后我们将有奖品送出。希望大家玩的开心。"
+            android:layout_marginTop="15dp"
+            android:textSize="16sp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:lineSpacingExtra="3dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp">
+        <ListView
+            android:id="@+id/lt_replyContent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+    </LinearLayout>
+</LinearLayout>
