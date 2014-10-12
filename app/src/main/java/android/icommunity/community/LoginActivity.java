@@ -3,7 +3,9 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.icommunity.R;
+import android.icommunity.utility.ConnectDetector;
 import android.icommunity.utility.Global;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -25,6 +27,7 @@ import java.sql.Date;
 import java.util.Map;
 
 import android.app.AlertDialog;
+import android.widget.Toast;
 
 /**
  * Created by Administrator on 2014/9/17.
@@ -40,23 +43,17 @@ public class LoginActivity extends Activity implements View.OnClickListener{
     private Handler handler = new Handler(){
         public void handleMessage(Message msg)
         {
-            //隐藏输入键盘
-            InputMethodManager imm = (InputMethodManager)getSystemService(LoginActivity.this.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(mUserPasswd.getWindowToken(), 0);
+            progressDialog.dismiss();
+
             switch(msg.what) {
                 case RESPONSE_IS_OK:
                     boolean retVal = (Boolean)msg.obj;
                     if (retVal)
                     {
-                        progressDialog = ProgressDialog.show(LoginActivity.this, null, "正在登陆...", true, false);
-                        new Handler().postDelayed(new Runnable() {
-                            public void run() {
-                                progressDialog.dismiss();
-                                Intent Intent = new Intent(LoginActivity.this, HomeActivity.class);
-                                startActivity(Intent);
-                                finish();
-                            }
-                        }, 3000);
+                        Intent Intent = new Intent(LoginActivity.this, HomeActivity.class);
+                        startActivity(Intent);
+                        finish();
+
                     }
                     else
                     {
@@ -66,11 +63,9 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                                 .setPositiveButton("确定", null)
                                 .create().show();
                     }
-
                     break;
                 default:
                     break;
-
             }
         }
     };
@@ -90,7 +85,22 @@ public class LoginActivity extends Activity implements View.OnClickListener{
     {
         if(v.getId() == R.id.login_btn)
         {
-             LoginInCommunity();
+            //隐藏输入键盘
+            InputMethodManager imm = (InputMethodManager)getSystemService(LoginActivity.this.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(mUserPasswd.getWindowToken(), 0);
+            //检查网络连接是否正常
+            ConnectDetector conn = new ConnectDetector(LoginActivity.this);
+            if(conn.isConnectingToInternet())
+            {
+                LoginInCommunity();
+                progressDialog = ProgressDialog.show(LoginActivity.this, null, "正在登陆...", true, false);
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(),
+                        "网络连接不可用，请稍后再用", Toast.LENGTH_LONG)
+                        .show();
+            }
         }
     }
 
@@ -112,13 +122,13 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                 Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 
                 String str = gson.toJson(user);
-                String str1 = null;
 
                 HttpURLConnection httpURLConnection = null;
                 try {
                     URL url = new URL(urlStr);
                     httpURLConnection = (HttpURLConnection)url.openConnection();
-                    httpURLConnection.setConnectTimeout(3000);
+                    httpURLConnection.setConnectTimeout(30000);
+                    httpURLConnection.setReadTimeout(30000);
                     httpURLConnection.setDoInput(true);                  //打开输入流，以便从服务器获取数据
                     httpURLConnection.setDoOutput(true);                 //打开输出流，以便向服务器提交数据
                     httpURLConnection.setRequestMethod("POST");
@@ -151,6 +161,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                         handler.sendMessage(msg);
                     }
                 } catch (Exception e) {
+                    progressDialog.dismiss();
                     e.printStackTrace();
                 }
                 finally {
